@@ -6,7 +6,7 @@ public class Test {
 		System.out.println("this is test");
 		//추가
 		//진호컴 예리미 로그인 
-		//진호
+		//진호 진호가로그인
 	}
 
 }

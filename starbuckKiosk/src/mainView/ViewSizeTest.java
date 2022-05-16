@@ -3,34 +3,64 @@ package mainView;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.FlowLayout;
+import java.awt.GridBagConstraints;
+import java.awt.GridBagLayout;
 import java.awt.Toolkit;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.LineBorder;
 
+import com.sun.xml.internal.ws.api.server.Container;
+
 public class ViewSizeTest extends JFrame{
 	
 	Dimension dimension = Toolkit.getDefaultToolkit().getScreenSize();
 	int screenHeight = dimension.height*3/4;
 	int screenWidth = screenHeight*3/4;
+	GridBagLayout grid = new GridBagLayout();
+	GridBagConstraints gbc = new GridBagConstraints();
+	JPanel myPanel = new JPanel();
 	
 	public ViewSizeTest() {
 		setTitle("테스트");
 		setBounds(dimension.width-screenWidth,dimension.height-100-screenHeight,screenWidth,screenHeight);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setLayout(new FlowLayout());
-		makePanel(1);
-		makePanel(1);
-		makePanel(1);
+		//setLayout(grid);
+		setLayout(grid);
+		myPanel.setBounds(dimension.width-screenWidth,dimension.height-100-screenHeight,screenWidth,screenHeight);
+		myPanel.setLayout(grid);
+		makeGridPanel(makePanel(1), 0, 0, 1, 1);
+		makeGridPanel(makePanel(1), 1, 0, 1, 1);
+		makeGridPanel(makePanel(1), 0, 1, 1, 1);
+		makeGridPanel(makePanel(1), 1, 1, 1, 1);
+		makeGridPanel(makePanel(1), 0, 2, 1, 1);
+		makeGridPanel(makePanel(1), 1, 2, 1, 1);
+		java.awt.Container mo = getContentPane();
+		System.out.println(mo.getWidth()+"  "+mo.getHeight());
+		System.out.println(myPanel.getWidth()+" "+myPanel.getHeight());
+		System.out.println(getWidth()+" "+getHeight());
+		myPanel.setVisible(true);
+		add(myPanel);
 		setVisible(true);
 	}
-	public void makePanel(int num) {
+	public JPanel makePanel(int num) {
 		JPanel newOne = new JPanel();
+		newOne.setBounds(0,0,200, 200);
 		newOne.setBackground(Color.cyan);
-		setVisible(true);
+		newOne.setVisible(true);
 		newOne.setBorder(new LineBorder(Color.blue,2));
-		add(newOne);
+		myPanel.add(newOne);
+		return newOne;
+	}
+	
+	public void makeGridPanel(JPanel panel,int x,int y,int width, int height) {
+		gbc.gridx = x;
+		gbc.gridy = y;
+		gbc.gridwidth = width;
+		gbc.gridheight = height;
+		gbc.fill = GridBagConstraints.BOTH;
+		grid.setConstraints(panel, gbc);
 	}
 	
 	public static void main(String[] args) {

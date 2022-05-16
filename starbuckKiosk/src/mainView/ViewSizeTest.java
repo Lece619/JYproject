@@ -11,5 +11,14 @@ public class ViewSizeTest extends JFrame{
 	int screenHeight = dimension.height*3/4;
 	int screenWidth = dimension.height/2;
 	
+	public ViewSizeTest() {
+		setTitle("테스트");
+		setBounds(dimension.width-screenWidth,dimension.height-screenHeight,screenWidth,screenHeight);
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setVisible(true);
+	}
 	
+	public static void main(String[] args) {
+		new ViewSizeTest();
+	}
 }

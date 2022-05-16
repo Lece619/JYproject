@@ -1,5 +1,6 @@
 package mainView;
 
+import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.FlowLayout;
@@ -12,7 +13,7 @@ import javax.swing.JPanel;
 import javax.swing.border.LineBorder;
 
 import com.sun.xml.internal.ws.api.server.Container;
-
+//그리드 뷁 레이아웃 오바야...
 public class ViewSizeTest extends JFrame{
 	
 	Dimension dimension = Toolkit.getDefaultToolkit().getScreenSize();
@@ -27,9 +28,11 @@ public class ViewSizeTest extends JFrame{
 		setBounds(dimension.width-screenWidth,dimension.height-100-screenHeight,screenWidth,screenHeight);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		//setLayout(grid);
-		setLayout(grid);
+		setLayout(new BorderLayout());
 		myPanel.setBounds(dimension.width-screenWidth,dimension.height-100-screenHeight,screenWidth,screenHeight);
+		myPanel.setPreferredSize(new Dimension(screenWidth,screenHeight));
 		myPanel.setLayout(grid);
+		
 		makeGridPanel(makePanel(1), 0, 0, 1, 1);
 		makeGridPanel(makePanel(1), 1, 0, 1, 1);
 		makeGridPanel(makePanel(1), 0, 1, 1, 1);
@@ -46,11 +49,13 @@ public class ViewSizeTest extends JFrame{
 	}
 	public JPanel makePanel(int num) {
 		JPanel newOne = new JPanel();
-		newOne.setBounds(0,0,200, 200);
+		newOne.setPreferredSize(new Dimension(myPanel.getWidth()/2,myPanel.getHeight()/3));
 		newOne.setBackground(Color.cyan);
 		newOne.setVisible(true);
 		newOne.setBorder(new LineBorder(Color.blue,2));
 		myPanel.add(newOne);
+		newOne.setPreferredSize(new Dimension(myPanel.getWidth()/2,myPanel.getHeight()/3));
+		System.out.println("생성 높 넓"+newOne.getWidth());
 		return newOne;
 	}
 	

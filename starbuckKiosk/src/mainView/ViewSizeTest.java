@@ -15,7 +15,7 @@ import javax.swing.border.LineBorder;
 import com.sun.xml.internal.ws.api.server.Container;
 //그리드 뷁 레이아웃 오바야...
 public class ViewSizeTest extends JFrame{
-	
+	//new 
 	Dimension dimension = Toolkit.getDefaultToolkit().getScreenSize();
 	int screenHeight = dimension.height*3/4;
 	int screenWidth = screenHeight*3/4;

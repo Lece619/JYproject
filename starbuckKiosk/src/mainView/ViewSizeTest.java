@@ -11,9 +11,7 @@ import java.awt.Toolkit;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.LineBorder;
-
-import com.sun.xml.internal.ws.api.server.Container;
-//그리드 뷁 레이아웃 오바야...
+//洹몃━�뱶 酉� �젅�씠�븘�썐 �삤諛붿빞...
 public class ViewSizeTest extends JFrame{
 	
 	Dimension dimension = Toolkit.getDefaultToolkit().getScreenSize();
@@ -24,7 +22,7 @@ public class ViewSizeTest extends JFrame{
 	JPanel myPanel = new JPanel();
 	
 	public ViewSizeTest() {
-		setTitle("테스트");
+		setTitle("�뀒�뒪�듃");
 		setBounds(dimension.width-screenWidth,dimension.height-100-screenHeight,screenWidth,screenHeight);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		//setLayout(grid);
@@ -55,7 +53,7 @@ public class ViewSizeTest extends JFrame{
 		newOne.setBorder(new LineBorder(Color.blue,2));
 		myPanel.add(newOne);
 		newOne.setPreferredSize(new Dimension(myPanel.getWidth()/2,myPanel.getHeight()/3));
-		System.out.println("생성 높 넓"+newOne.getWidth());
+		System.out.println("�깮�꽦 �넂 �꼻"+newOne.getWidth());
 		return newOne;
 	}
 	

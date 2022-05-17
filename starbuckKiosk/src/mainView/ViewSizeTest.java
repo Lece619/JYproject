@@ -11,9 +11,9 @@ import java.awt.Toolkit;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.LineBorder;
-//洹몃━�뱶 酉� �젅�씠�븘�썐 �삤諛붿빞...
+
 public class ViewSizeTest extends JFrame{
-	//new 
+	//new 가나다람바사
 	Dimension dimension = Toolkit.getDefaultToolkit().getScreenSize();
 	int screenHeight = dimension.height*3/4;
 	int screenWidth = screenHeight*3/4;
@@ -22,7 +22,7 @@ public class ViewSizeTest extends JFrame{
 	JPanel myPanel = new JPanel();
 	
 	public ViewSizeTest() {
-		setTitle("�뀒�뒪�듃");
+		setTitle("테스트");
 		setBounds(dimension.width-screenWidth,dimension.height-100-screenHeight,screenWidth,screenHeight);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		//setLayout(grid);

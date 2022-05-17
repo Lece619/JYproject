@@ -23,7 +23,7 @@ public class ViewSizeTest extends JFrame{
 	JPanel myPanel = new JPanel();
 	
 	public ViewSizeTest() {
-		setTitle("테스트");
+		setTitle("스타벅스메인");
 		setBounds(dimension.width-screenWidth,dimension.height-100-screenHeight,screenWidth,screenHeight);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		//setLayout(grid);
@@ -54,7 +54,7 @@ public class ViewSizeTest extends JFrame{
 		newOne.setBorder(new LineBorder(Color.blue,2));
 		myPanel.add(newOne);
 		newOne.setPreferredSize(new Dimension(myPanel.getWidth()/2,myPanel.getHeight()/3));
-		System.out.println("�깮�꽦 �넂 �꼻"+newOne.getWidth());
+		System.out.println("테스트"+newOne.getWidth());
 		return newOne;
 	}
 	

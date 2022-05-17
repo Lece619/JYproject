@@ -13,7 +13,7 @@ import javax.swing.JPanel;
 import javax.swing.border.LineBorder;
 //洹몃━�뱶 酉� �젅�씠�븘�썐 �삤諛붿빞...
 public class ViewSizeTest extends JFrame{
-	
+	//new 
 	Dimension dimension = Toolkit.getDefaultToolkit().getScreenSize();
 	int screenHeight = dimension.height*3/4;
 	int screenWidth = screenHeight*3/4;

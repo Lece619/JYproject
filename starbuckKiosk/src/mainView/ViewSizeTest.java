@@ -13,7 +13,8 @@ import javax.swing.JPanel;
 import javax.swing.border.LineBorder;
 
 public class ViewSizeTest extends JFrame{
-	//new 가나다람바사
+	//new 가나다람바사 
+	//다시 써서보냈엉 한글 잘나오나 사랑해
 	Dimension dimension = Toolkit.getDefaultToolkit().getScreenSize();
 	int screenHeight = dimension.height*3/4;
 	int screenWidth = screenHeight*3/4;
